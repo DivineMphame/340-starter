@@ -11,6 +11,20 @@ const env = require("dotenv").config()
 const app = express()
 const static = require("./routes/static")
 
+// Default locals for templates
+app.use((req, res, next) => {
+  res.locals.loggedin = false
+  res.locals.accountData = {}
+  res.locals.nav = `
+    <ul class="nav-list">
+      <li><a href="/">Home</a></li>
+      <li><a href="/inv">Inventory</a></li>
+      <li><a href="/account/login">Login</a></li>
+    </ul>
+  `
+  next()
+})
+
 /* ***********************
  * View Engine and Templates
  *************************/
@@ -33,6 +47,17 @@ const host = process.env.HOST
 /* ***********************
  * Log statement to confirm server operation
  *************************/
+// Error handler (render friendly page on uncaught errors)
+app.use((err, req, res, next) => {
+  console.error(err)
+  res.status(err.status || 500)
+  try {
+    return res.render('errors/500', { title: 'Server Error', error: err })
+  } catch (e) {
+    return res.send(`Server Error: ${err.message}`)
+  }
+})
+
 app.listen(port, () => {
   console.log(`app listening on ${host}:${port}`)
 })

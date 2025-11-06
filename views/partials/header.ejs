@@ -1,8 +1,16 @@
-<header id="top-header">
-  <span class="siteName">
+<header id="top-header" class="top-header">
+  <h1 class="site-name">
     <a href="/" title="Return to home page">CSE Motors</a>
-  </span>
-  <div id="tools">
-    <a title="Click to log in" href="/account/login">My Account</a>
+  </h1>
+
+  <div class="tools">
+    <% if (typeof loggedin !== 'undefined' && loggedin) { %>
+    <a href="/account" title="Go to your account">
+      Welcome <%= (accountData && accountData.account_firstname) || '' %>
+    </a>
+    <a href="/account/logout" title="Click to log out">Logout</a>
+    <% } else { %>
+    <a href="/account/login" title="Click to log in">My Account</a>
+    <% } %>
   </div>
 </header>
