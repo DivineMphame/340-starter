@@ -5,12 +5,19 @@
                 "ssl": {
                     "rejectUnauthorized": true
                 }
-            },           
+            },
+            "ssh": "Disabled",
             "previewLimit": 50,
             "server": "localhost",
             "driver": "PostgreSQL",
-            "name":"cse340 database",
-            "connectString":  "cse340 dpostgresql://cse340tm:o7IK5EReGIk18ZdbpPI8LjFk6qbuGzHG@dpg-d45ovam3jp1c73dmo77g-a/cse340tm_m91yatabase"
+            "name": "cse340 database",
+            "connectString": "postgresql://cse_340_database_g1hx_user:pgN8GtEgr6B0ELNhuKmQPGCMSQ5x7HLc@dpg-d494q3mr433s73adi2ig-a.frankfurt-postgres.render.com/cse_340_database_g1hx"
+        }
+    ],
+    "mdb.presetConnections": [
+        {
+            "name": "Preset Connection",
+            "connectionString": "mongodb://localhost:27017"
         }
     ]
 }
