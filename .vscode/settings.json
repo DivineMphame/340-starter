@@ -10,8 +10,8 @@
             "previewLimit": 50,
             "server": "localhost",
             "driver": "PostgreSQL",
-            "name": "cse340 database",
-            "connectString": "postgresql://cse_340_database_g1hx_user:pgN8GtEgr6B0ELNhuKmQPGCMSQ5x7HLc@dpg-d494q3mr433s73adi2ig-a.frankfurt-postgres.render.com/cse_340_database_g1hx"
+            "name": "cse340 DB",
+            "connectString": "postgresql://cse340_db_xscz_user:xT5VJ8dTwR2fjsZdq0LbfKFGLR201Sk2@dpg-d49jnr15pdvs73cv4grg-a.frankfurt-postgres.render.com/cse340_db_xscz"
         }
     ],
     "mdb.presetConnections": [

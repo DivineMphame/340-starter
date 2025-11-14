@@ -42,17 +42,16 @@ async function registerAccount(req, res) {
   // Hash the password before storing
   let hashedPassword;
   try {
-    // use the async hash function with cost factor 10
-    hashedPassword = await bcrypt.hash(account_password, 10);
+    // regular password and cost (salt is generated automatically)
+    hashedPassword = await bcrypt.hashSync(account_password, 10);
   } catch (error) {
     req.flash(
       "notice",
       "Sorry, there was an error processing the registration."
     );
-    return res.status(500).render("account/register", {
+    res.status(500).render("account/register", {
       title: "Registration",
       nav,
-      errors: null,
     });
   }
 
@@ -66,12 +65,15 @@ async function registerAccount(req, res) {
   if (regResult) {
     req.flash(
       "notice",
-      `Congratulations, you're registered ${account_firstname}. Please log in.`
+      `Congratualations, you\'re registered ${account_firstname}. Please log in.`
     );
-    return res.redirect("/account/");
+    res.status(201).render("account/login", {
+      title: "Login",
+      nav,
+    });
   } else {
-    req.flash("error", "Sorry, the registration failed.");
-    return res.status(501).render("account/register", {
+    req.flash("error", "Sorry, the registeration failed.");
+    res.status(501).render("account/register", {
       title: "Registration",
       nav,
       errors: null,

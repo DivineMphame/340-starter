@@ -25,7 +25,7 @@ const connectLivereload = require("connect-livereload")
 const path = require("path")
 
 const liveReloadServer = livereload.createServer()
-liveReloadServer.watch(path.join(_dirname, 'public'), path.join(_dirname, 'views'))
+liveReloadServer.watch(path.join(__dirname, 'public'), path.join(__dirname, 'views'))
 
 liveReloadServer.server.once("connection", () => {
   setTimeout(() => {

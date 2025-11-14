@@ -311,7 +311,7 @@ invCont.deleteInventoryItem = async function (req, res) {
   }
 };
 
-// Wk 06 Enhancement Idea
+// Week 06 Enhancement Idea
 
 invCont.toggleVehicleStatus = async function(req, res) {
   const inv_id = parseInt(req.params.inv_id);

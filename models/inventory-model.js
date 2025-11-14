@@ -134,7 +134,7 @@ async function deleteInventoryItem(inv_id) {
 }
 
 /* ***************************
- *  Wk06 - Enhacement Idea
+ *  Week06 - Enhacement Idea
  * ************************** */
 
 async function updateVehicleStatus(inv_id, inv_status) {
