@@ -236,6 +236,6 @@ UPDATE public.inventory
 SET inv_image = REPLACE(inv_image, '/images/', '/images/vehicles/'),
     inv_thumbnail = REPLACE(inv_thumbnail, '/images/', '/images/vehicles/');
 
---  Week 06 Enhancement Idea
+--  Week 06 Enhancement Idea --
 ALTER TABLE public.inventory
 ADD COLUMN inv_status VARCHAR(10) DEFAULT 'Available' NOT NULL;
